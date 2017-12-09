@@ -6,7 +6,7 @@
   "repository": "git+https://github.com/pbarrenechea/pay-with-tweet.git",
   "scripts": {
     "build-css": "node-sass --include-path scss src/scss/main.scss   src/static/css/style.css",
-    "start": "npm run build-css && cross-env NODE_ENV=production node_modules/.bin/babel-node --presets react,es2015 src/server.js",
+    "start": "cross-env NODE_ENV=production node_modules/.bin/babel-node --presets react,es2015 src/server.js",
     "start-dev": "npm run build-css && npm run start-dev-hmr",
     "start-dev-single-page": "node_modules/.bin/http-server src/static",
     "start-dev-hmr": "node_modules/.bin/webpack-dev-server --progress --inline --hot --open",
