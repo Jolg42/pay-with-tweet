@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+body {
+  background: #F8F8F8;
+  font-family: Roboto, Helvetica, sans-serif; }
+
+#main {
+  margin: auto;
+  max-width: 960px; }
+  #main .app-container {
+    width: 100%;
+    padding-top: 10px; }
+    #main .app-container-header a {
+      color: black;
+      text-decoration: none; }
+      #main .app-container-header a img {
+        vertical-align: middle;
+        display: inline-flex; }
+      #main .app-container-header a h1 {
+        margin-left: 10px;
+        display: inline-flex; }
+    #main .app-container .app-content {
+      width: 100%;
+      padding-top: 20px; }
+      #main .app-container .app-content .ebook-list .ebook-table {
+        width: 100%;
+        margin-top: 10px;
+        border-collapse: collapse; }
+        #main .app-container .app-content .ebook-list .ebook-table thead tr {
+          background: #eb5424;
+          color: #FFFFFF; }
+          #main .app-container .app-content .ebook-list .ebook-table thead tr th {
+            padding: 10px;
+            text-align: left; }
+          #main .app-container .app-content .ebook-list .ebook-table thead tr .id-header {
+            width: 10%; }
+          #main .app-container .app-content .ebook-list .ebook-table thead tr .name-header {
+            width: 70%; }
+          #main .app-container .app-content .ebook-list .ebook-table thead tr .author-header {
+            width: 20%; }
+        #main .app-container .app-content .ebook-list .ebook-table tbody tr td {
+          padding: 5px; }
+          #main .app-container .app-content .ebook-list .ebook-table tbody tr td a {
+            color: #182c71;
+            text-decoration: none; }
+            #main .app-container .app-content .ebook-list .ebook-table tbody tr td a:hover {
+              opacity: 0.8; }
+        #main .app-container .app-content .ebook-list .ebook-table tbody tr:nth-child(even) {
+          background: #CCC; }
