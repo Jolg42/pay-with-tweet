@@ -1,7 +1,9 @@
+@import 'font.scss';
+
 * { padding: 0; margin: 0;  }
 body {
-    background: #F8F8F8;
-    font-family: Roboto, Helvetica, sans-serif;    
+    background: #FFFFFF;
+    font-family: 'Fakt ProUI', Helvetica, sans-serif;    
 }
 #main {
     margin: auto;
@@ -80,3 +82,5 @@ body {
         }
     }
 }
+
+@import 'ebook.scss';

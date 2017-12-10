@@ -10,8 +10,7 @@
     "start-dev": "npm run build-css && npm run start-dev-hmr",
     "start-dev-single-page": "node_modules/.bin/http-server src/static",
     "start-dev-hmr": "node_modules/.bin/webpack-dev-server --progress --inline --hot --open",
-    "build": "cross-env NODE_ENV=production node_modules/.bin/webpack -p",
-    "heroku-postbuild": "next build"
+    "build": "cross-env NODE_ENV=production node_modules/.bin/webpack -p"
   },
   "author": "Pablo Barrenechea",
   "license": "MIT",
@@ -28,9 +27,12 @@
     "express": "^4.14.0",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
-    "react-router": "^2.6.1"
+    "react-router": "^2.6.1",
+    "react-share": "^1.18.0",
+    "react-twitter-widgets": "^1.7.1"
   },
   "devDependencies": {
+    "babel-plugin-root-import": "^5.1.0",
     "http-server": "^0.9.0",
     "node-sass": "^4.7.2",
     "nodemon": "^1.12.5",
@@ -38,5 +40,8 @@
     "sass-loader": "^6.0.6",
     "webpack": "^1.15.0",
     "webpack-dev-server": "^1.14.1"
+  },
+  "engines": {
+    "node": "6.10.3"
   }
 }
