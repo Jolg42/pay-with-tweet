@@ -21,7 +21,7 @@ const client = {
     ],
   },
   resolve: {
-    extensions: [".jsx", ".js"]
+    extensions: ["",".jsx", ".js"]
   }
 };
 
