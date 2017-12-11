@@ -1,6 +1,6 @@
 'use strict';
 import React from 'react';
-import PaymentComponent from './PaymentComponent';
+import PaymentComponent from './PaymentComponent.js';
 export default class EbookContentsComponent extends React.Component {
     render() {
         return (

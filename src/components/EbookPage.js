@@ -5,8 +5,8 @@ import { Link } from 'react-router';
 import Ebooks from '../data/Ebooks';
 import AuthorComponent from './AuthorComponent';
 import EbookPreviewComponent from './EbookPreviewComponent';
-import EbookSummaryComponent from './EbookSummaryComponent';
-import EbookContentsComponent from './EbookContentsComponent'
+import EbookSummaryComponent from './EbookSummaryComponent.js';
+import EbookContentsComponent from './EbookContentsComponent.js'
 export default class EbookPage extends React.Component {
   render() {
     const id = this.props.params.id;

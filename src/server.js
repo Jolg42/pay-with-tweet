@@ -7,8 +7,8 @@ import React from 'react';
 
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
-import routes from './routes';
-import NotFoundPage from './components/NotFoundPage';
+import routes from './routes.js';
+import NotFoundPage from './components/NotFoundPage.js';
 import DownloadHandler from './file-downloads.js';
 // initialize the server and configure support for ejs templates
 const app = new Express();

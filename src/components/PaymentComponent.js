@@ -1,5 +1,5 @@
 'use strict';
-import DownloadLink from './DownloadLink';
+import DownloadLink from './DownloadLink.js';
 import React from 'react';
 import {ShareButtons} from 'react-share';
 const { TwitterShareButton } = ShareButtons;
