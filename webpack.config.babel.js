@@ -20,6 +20,9 @@ const client = {
       },
     ],
   },
+  resolve: {
+    extensions: [".jsx", ".js"]
+  }
 };
 
 const server = {
@@ -49,6 +52,9 @@ const server = {
       },
     ],
   },
+  resolve: {
+    extensions: [".jsx", ".js"]
+  }
 };
 
 export default [client, server];
