@@ -1,15 +1,16 @@
 'use strict';
 
 import path from 'path';
+import fs from 'fs';
 import { Server } from 'http';
 import Express from 'express';
 import React from 'react';
 
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
-import routes from './routes.js';
-import NotFoundPage from './components/NotFoundPage.js';
-import DownloadHandler from './file-downloads.js';
+import routes from './routes';
+import NotFoundPage from './components/NotFoundPage';
+import DownloadHandler from './file-downloads';
 // initialize the server and configure support for ejs templates
 const app = new Express();
 const server = new Server(app);
@@ -27,19 +28,23 @@ app.get('/download/:sid', (req, res) => {
     if (err) {
       return res.end('Error');
     } 
-    // Read and send the file here...
-    // Finally, delete the download session to invalidate the link
-    DownloadHandler.deleteDownload(downloadSid, function(err) {
+    console.log(path);
+    let file = fs.createReadStream(path);
+    let stat = fs.statSync(path);
+    res.setHeader('Content-Length', stat.size);
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', `attachment; filename=${downloadSid}.pdf`);
+    file.pipe(res);
+    DownloadHandler.deleteDownload(downloadSid, (err) => {
         console.log('Link deleted');
     });
   });
 });
 
 app.get('/generateDownload/:id', (req, res) => {
-  DownloadHandler.createDownload(`${__dirname}/pdf/${req.params.id}.pdf`, (err) => {
-    console.log(err);
+  DownloadHandler.createDownload(`${__dirname}/pdf/${req.params.id}.pdf`, (err, sid) => {
     res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify({ link: 'http://localhost:3000/download/1' }));  
+    res.send(JSON.stringify({ link: `http://localhost:3000/download/${sid}` }));  
   });
 });
 

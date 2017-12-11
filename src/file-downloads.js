@@ -17,26 +17,20 @@ function copyFile(src, dest) {
 }
 
 // Path where we store the download sessions
-const DL_SESSION_FOLDER = __dirname + '/download';
+const DL_SESSION_FOLDER = __dirname + '/static/download';
 
 export default class DownloadHandler {
 /* Creates a download session */
 static createDownload(filePath, callback) {
-    console.log(`Path: ${filePath}`);
-    console.log();
     // Check the existence of DL_SESSION_FOLDER
     if (!fs.existsSync(DL_SESSION_FOLDER)) {
         return callback(new Error('Session directory does not exist'));
-    } else {
-        console.log('Folder exists');
     }
       
   
     // Check the existence of the file
     if (!fs.existsSync(filePath)) {
         return callback(new Error('File doest not exist'));
-    } else{
-        console.log('File exists');
     }
      
   
@@ -55,26 +49,20 @@ static createDownload(filePath, callback) {
   /* Gets the download file path related to a download sid */
   static  getDownloadFilePath(downloadSid, callback) {
     // Get the download session file name
-    let dlSessionFileName = path.join(DL_SESSION_FOLDER, downloadSid + '.download');
+    let dlSessionFileName = path.join(DL_SESSION_FOLDER, downloadSid + '.pdf');
   
     // Check if the download session exists
-    if (!fs.existsSync(dlSessionFileName)) 
+    if (!fs.existsSync(dlSessionFileName)) {
       return callback(new Error('Download does not exist'));
-  
-    // Get the file path
-    fs.readFile(dlSessionFileName, (err, data) => {
-      if (err) {
-          return callback(err);
-      }
-      // Return the file path
-      callback(null, data);
-    });
+    } else {
+      callback(null, dlSessionFileName);      
+    }
   }
   
   /* Deletes a download session */
   static deleteDownload(downloadSid, callback) {
     // Get the download session file name
-    var dlSessionFileName = path.join(DL_SESSION_FOLDER, downloadSid + '.download');
+    var dlSessionFileName = path.join(DL_SESSION_FOLDER, downloadSid + '.pdf');
   
     // Check if the download session exists
     if (!fs.existsSync(dlSessionFileName)) {

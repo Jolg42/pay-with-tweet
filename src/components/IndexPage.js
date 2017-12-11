@@ -1,6 +1,6 @@
 import React from 'react';
-import EbookRow  from './EbookRow.js';
-import Ebooks from '../data/Ebooks.js';
+import EbookRow  from './EbookRow';
+import Ebooks from '../data/Ebooks';
 
 export default class IndexPage extends React.Component {
     render() {
