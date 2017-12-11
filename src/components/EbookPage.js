@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { Link } from 'react-router';
-import Ebooks from '../data/Ebooks';
-import AuthorComponent from './AuthorComponent';
-import EbookPreviewComponent from './EbookPreviewComponent';
+import Ebooks from '../data/Ebooks.js';
+import AuthorComponent from './AuthorComponent.js';
+import EbookPreviewComponent from './EbookPreviewComponent.js';
 import EbookSummaryComponent from './EbookSummaryComponent.js';
 import EbookContentsComponent from './EbookContentsComponent.js'
 export default class EbookPage extends React.Component {
