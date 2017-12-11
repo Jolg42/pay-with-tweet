@@ -21,7 +21,10 @@ const client = {
     ],
   },
   resolve: {
-    extensions: ["",".jsx", ".js"]
+    resolve: { modulesDirectories: 
+      ['node_modules', 'src'], 
+      extensions: [".jsx", ".js"]    
+    } 
   }
 };
 
@@ -53,7 +56,10 @@ const server = {
     ],
   },
   resolve: {
-    extensions: [".jsx", ".js"]
+    resolve: { modulesDirectories: 
+      ['node_modules', 'src'], 
+      extensions: [".jsx", ".js"]    
+    } 
   }
 };
 
