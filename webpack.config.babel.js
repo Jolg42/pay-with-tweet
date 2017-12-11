@@ -25,7 +25,7 @@ const client = {
 const server = {
   target: 'node',
   node: {
-    __dirname: false,
+    __dirname: true,
   },
   externals: [nodeExternals({
     modulesFromFile: true,
