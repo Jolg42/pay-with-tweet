@@ -44,6 +44,7 @@ app.get('/download/:sid', (req, res) => {
 
 app.get('/generateDownload/:id', (req, res) => {
   DownloadHandler.createDownload(`${__dirname}/pdf/${req.params.id}.pdf`, (err, sid) => {
+    console.log(err);
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify({ link: `${AppConfig.url}download/${sid}` }));  
   });
