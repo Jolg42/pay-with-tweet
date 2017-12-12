@@ -1,6 +1,7 @@
 import path from 'path';
 import nodeExternals from 'webpack-node-externals';
 
+
 const client = {
   entry: {
     js: './src/app-client.js',
@@ -25,7 +26,7 @@ const client = {
 const server = {
   target: 'node',
   node: {
-    __dirname: true,
+    __dirname: false,
   },
   externals: [nodeExternals({
     modulesFromFile: true,

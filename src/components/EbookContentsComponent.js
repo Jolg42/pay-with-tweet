@@ -4,7 +4,7 @@ import PaymentComponent from './PaymentComponent';
 export default class EbookContentsComponent extends React.Component {
     render() {
         return (
-            <div className="ebook-contents">
+            <div className="ebook-contents right-container">
                 <p className="ebook-contents-paragraph ebook-contents-summary">{this.props.summary}</p>
                 <p className="ebook-contents-paragraph ebook-contents-description">{this.props.content}</p>
                 <div className="ebook-contents-link-toc" >

@@ -1,21 +1,36 @@
+$desktop-breakpoint: 950px;
+$button-breakpoint: 480px;
+
 .ebook-page-main {
     width: 100%;
     display: block;
 
     .ebook-thumb-wrapper {
+        width: 100%;
         text-align: center;
-        float: left;
-        width: 360px;
+        @media (min-width: $desktop-breakpoint) {
+            float: left;
+            width: 360px;    
+        }
         img {
             box-shadow: 2px 10px 15px 0px rgba(168,168,168,1);
         }
     }
-
+    .right-container {
+        width: 100%;
+        text-align: center;
+        @media (min-width: $desktop-breakpoint) {
+            float: right;
+            margin-left: 40px;
+            width: calc( 100% - 400px);
+            text-align: left;
+        }
+    }
     .ebook-summary {
-        float: right;
-        margin-left: 40px;
-        width: calc( 100% - 400px);
+
+        margin-bottom: 30px;
         color: #333333;
+
         &-title {
             width: 100%;
             font-size: 30px;
@@ -40,10 +55,12 @@
     }
 
     .ebook-contents {
-        margin-left: 40px;
-        float: right;
-        width: calc(100% - 400px);
-       
+        width: 100%;
+        @media (min-width: $desktop-breakpoint) {
+            float: right;
+            margin-left: 40px;
+            width: calc( 100% - 400px);
+        }
         &-paragraph {
             line-height: 2.5;
             font-size: 13px;
@@ -99,6 +116,12 @@
                 border-radius: 4px;
                 display: inline-flex;
                 margin-left: 10px;
+               
+                @media (max-width: $button-breakpoint) {
+                    margin-top: 20px;
+                    margin-left: 0px;        
+                }
+               
                 &:hover {
                     cursor: pointer;
                 }
@@ -112,7 +135,6 @@
                      color: #4a4a4a;
                  }
             }
-            
         }
 
         .content-separator {
@@ -140,8 +162,14 @@
         color: #FFFFFF;
         background: #183082;
         &-title {
-            float: right;
-            width: calc( 100% - 400px);
+            width: 100%;
+            text-align: center;
+            @media (min-width: $desktop-breakpoint) {
+                float: right;
+                width: calc( 100% - 400px);
+                text-align: left;
+            }
+
             h2 {
                 width: 100%;
                 font-size: 30px;
@@ -152,27 +180,44 @@
 
         &-picture {
             text-align: center;
-            float: left;
-            width: 400px;
+            width: 100%;
+            margin-top: 20px;
+            @media (min-width: $desktop-breakpoint) {
+                float: left;
+                width: 400px;
+                margin-top: 0px; 
+            }
         } 
 
         &-about {
-            width: calc( 100% - 430px);
-            float: left;        
+            width: 96%;
+            padding: 4px;    
+            @media (min-width: $desktop-breakpoint) {
+                width: calc( 100% - 430px);
+                float: left;  
+                padding: 0px;
+            }          
             margin-top: 20px;
             line-height: 2.5;
             font-weight: normal;
             font-size: 13px;
+
         }
 
         &-followtwitter {
-            width: calc( 100% - 400px);
-            float:right;
             margin-top: 10px;
             font-size: 15px;    
+            width: 96%;
+            padding: 4px;
             img {
                 vertical-align: middle;
             }
+            @media (min-width: $desktop-breakpoint) {
+                width: calc( 100% - 400px);
+                float:right;
+                padding: 0px
+            }    
+            
         }
     }
 }

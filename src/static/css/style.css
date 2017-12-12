@@ -84,15 +84,25 @@ body {
   width: 100%;
   display: block; }
   .ebook-page-main .ebook-thumb-wrapper {
-    text-align: center;
-    float: left;
-    width: 360px; }
+    width: 100%;
+    text-align: center; }
+    @media (min-width: 950px) {
+      .ebook-page-main .ebook-thumb-wrapper {
+        float: left;
+        width: 360px; } }
     .ebook-page-main .ebook-thumb-wrapper img {
       box-shadow: 2px 10px 15px 0px #a8a8a8; }
+  .ebook-page-main .right-container {
+    width: 100%;
+    text-align: center; }
+    @media (min-width: 950px) {
+      .ebook-page-main .right-container {
+        float: right;
+        margin-left: 40px;
+        width: calc( 100% - 400px);
+        text-align: left; } }
   .ebook-page-main .ebook-summary {
-    float: right;
-    margin-left: 40px;
-    width: calc( 100% - 400px);
+    margin-bottom: 30px;
     color: #333333; }
     .ebook-page-main .ebook-summary-title {
       width: 100%;
@@ -112,9 +122,12 @@ body {
       .ebook-page-main .ebook-summary-version img {
         vertical-align: middle; }
   .ebook-page-main .ebook-contents {
-    margin-left: 40px;
-    float: right;
-    width: calc(100% - 400px); }
+    width: 100%; }
+    @media (min-width: 950px) {
+      .ebook-page-main .ebook-contents {
+        float: right;
+        margin-left: 40px;
+        width: calc( 100% - 400px); } }
     .ebook-page-main .ebook-contents-paragraph {
       line-height: 2.5;
       font-size: 13px;
@@ -156,6 +169,10 @@ body {
         border-radius: 4px;
         display: inline-flex;
         margin-left: 10px; }
+        @media (max-width: 480px) {
+          .ebook-page-main .ebook-contents .payment .emailDownload, .ebook-page-main .ebook-contents .payment .payment-download-wrapper {
+            margin-top: 20px;
+            margin-left: 0px; } }
         .ebook-page-main .ebook-contents .payment .emailDownload:hover, .ebook-page-main .ebook-contents .payment .payment-download-wrapper:hover {
           cursor: pointer; }
         .ebook-page-main .ebook-contents .payment .emailDownload span, .ebook-page-main .ebook-contents .payment .payment-download-wrapper span {
@@ -183,8 +200,13 @@ body {
     color: #FFFFFF;
     background: #183082; }
     .ebook-page-main .author-title {
-      float: right;
-      width: calc( 100% - 400px); }
+      width: 100%;
+      text-align: center; }
+      @media (min-width: 950px) {
+        .ebook-page-main .author-title {
+          float: right;
+          width: calc( 100% - 400px);
+          text-align: left; } }
       .ebook-page-main .author-title h2 {
         width: 100%;
         font-size: 30px;
@@ -192,19 +214,34 @@ body {
         line-height: 1.5; }
     .ebook-page-main .author-picture {
       text-align: center;
-      float: left;
-      width: 400px; }
+      width: 100%;
+      margin-top: 20px; }
+      @media (min-width: 950px) {
+        .ebook-page-main .author-picture {
+          float: left;
+          width: 400px;
+          margin-top: 0px; } }
     .ebook-page-main .author-about {
-      width: calc( 100% - 430px);
-      float: left;
+      width: 96%;
+      padding: 4px;
       margin-top: 20px;
       line-height: 2.5;
       font-weight: normal;
       font-size: 13px; }
+      @media (min-width: 950px) {
+        .ebook-page-main .author-about {
+          width: calc( 100% - 430px);
+          float: left;
+          padding: 0px; } }
     .ebook-page-main .author-followtwitter {
-      width: calc( 100% - 400px);
-      float: right;
       margin-top: 10px;
-      font-size: 15px; }
+      font-size: 15px;
+      width: 96%;
+      padding: 4px; }
       .ebook-page-main .author-followtwitter img {
         vertical-align: middle; }
+      @media (min-width: 950px) {
+        .ebook-page-main .author-followtwitter {
+          width: calc( 100% - 400px);
+          float: right;
+          padding: 0px; } }
