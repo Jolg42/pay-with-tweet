@@ -23,6 +23,7 @@ export default class DownloadHandler {
 /* Creates a download session */
 static createDownload(filePath, callback) {
     // Check the existence of DL_SESSION_FOLDER
+    console.log(DL_SESSION_FOLDER);
     if (!fs.existsSync(DL_SESSION_FOLDER)) {
         return callback(new Error('Session directory does not exist'));
     }
