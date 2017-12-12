@@ -17,7 +17,7 @@ function copyFile(src, dest) {
 }
 
 // Path where we store the download sessions
-const DL_SESSION_FOLDER = __dirname + '/static/download';
+const DL_SESSION_FOLDER = './static/download';
 
 export default class DownloadHandler {
 /* Creates a download session */
