@@ -115,8 +115,96 @@ body {
     margin-left: 40px;
     float: right;
     width: calc(100% - 400px); }
+    .ebook-page-main .ebook-contents-paragraph {
+      line-height: 2.5;
+      font-size: 13px;
+      font-weight: normal; }
+    .ebook-page-main .ebook-contents-summary {
+      margin-top: 50px;
+      font-weight: bold; }
+    .ebook-page-main .ebook-contents-description {
+      margin-top: 30px;
+      line-height: 2.5; }
+    .ebook-page-main .ebook-contents-link-toc {
+      margin-top: 30px; }
+      .ebook-page-main .ebook-contents-link-toc a {
+        color: #000000;
+        text-transform: uppercase;
+        text-decoration: none; }
+    .ebook-page-main .ebook-contents .payment {
+      margin-top: 30px; }
+      .ebook-page-main .ebook-contents .payment .SocialMediaShareButton--twitter {
+        color: #FFFFFF;
+        background: #1da1f2;
+        width: 240px;
+        height: 60px;
+        text-align: center;
+        text-transform: uppercase;
+        border-radius: 4px;
+        display: inline-flex; }
+        .ebook-page-main .ebook-contents .payment .SocialMediaShareButton--twitter:hover {
+          cursor: pointer; }
+        .ebook-page-main .ebook-contents .payment .SocialMediaShareButton--twitter span {
+          margin: auto; }
+      .ebook-page-main .ebook-contents .payment .emailDownload, .ebook-page-main .ebook-contents .payment .payment-download-wrapper {
+        color: #4a4a4a;
+        border: solid 1px #4a4a4a;
+        width: 240px;
+        height: 60px;
+        text-align: center;
+        text-transform: uppercase;
+        border-radius: 4px;
+        display: inline-flex;
+        margin-left: 10px; }
+        .ebook-page-main .ebook-contents .payment .emailDownload:hover, .ebook-page-main .ebook-contents .payment .payment-download-wrapper:hover {
+          cursor: pointer; }
+        .ebook-page-main .ebook-contents .payment .emailDownload span, .ebook-page-main .ebook-contents .payment .payment-download-wrapper span {
+          margin: auto; }
+        .ebook-page-main .ebook-contents .payment .emailDownload a, .ebook-page-main .ebook-contents .payment .payment-download-wrapper a {
+          margin: auto;
+          text-decoration: none;
+          color: #4a4a4a; }
+    .ebook-page-main .ebook-contents .content-separator {
+      display: block;
+      height: 1px;
+      border: 0;
+      border-top: 2px solid #f4f4f4;
+      margin-top: 60px;
+      padding: 0; }
+    .ebook-page-main .ebook-contents-instructions {
+      margin-top: 30px;
+      margin-bottom: 60px; }
   .ebook-page-main .author {
     width: 100%;
-    display: flex;
+    clear: both;
+    display: inline-block;
+    padding-top: 60px;
+    padding-bottom: 60px;
     color: #FFFFFF;
     background: #183082; }
+    .ebook-page-main .author-title {
+      float: right;
+      width: calc( 100% - 400px); }
+      .ebook-page-main .author-title h2 {
+        width: 100%;
+        font-size: 30px;
+        font-weight: normal;
+        line-height: 1.5; }
+    .ebook-page-main .author-picture {
+      text-align: center;
+      float: left;
+      width: 400px; }
+    .ebook-page-main .author-about {
+      width: calc( 100% - 430px);
+      float: left;
+      margin-top: 20px;
+      line-height: 2.5;
+      font-weight: normal;
+      font-size: 13px; }
+    .ebook-page-main .author-followtwitter {
+      width: calc( 100% - 400px);
+      float: right;
+      margin-top: 10px;
+      font-size: 15px; }
+      .ebook-page-main .author-followtwitter img {
+        vertical-align: middle; }

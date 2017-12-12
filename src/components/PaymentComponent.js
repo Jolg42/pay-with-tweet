@@ -1,5 +1,6 @@
 'use strict';
 import React from 'react';
+import AppConfig from '../data/config';
 import {ShareButtons} from 'react-share';
 import axios from 'axios';
 const { TwitterShareButton } = ShareButtons;
@@ -7,13 +8,13 @@ export default class EbookContentsComponent extends React.Component {
 
     constructor(props){
         super(props);
-        this.state = {shared: false };
+        this.state = {shared: false, downloaded: false };
     }
 
     afterSharedTweet () {
         axios({
             method:'get',
-            url:`http://localhost:3000/generateDownload/${this.props.id}`,
+            url:`${AppConfig.url}generateDownload/${this.props.id}`,
             responseType:'stream'
           }).then( (response) => {
               console.log(this.props);
@@ -24,7 +25,7 @@ export default class EbookContentsComponent extends React.Component {
 
     render() {
         const tweetPlaceholder = `I just downloaded ${this.props.title} 📖 by @auth0. ${this.props.version}. Check it out!`;
-        const tweetUrl = `http://localhost:3000/ebook/${this.props.id}`;
+        const tweetUrl = `${AppConfig.url}ebook/${this.props.id}`;
         let downloadLink = '';
         if (this.state.shared) {
             downloadLink = ( 
@@ -32,19 +33,22 @@ export default class EbookContentsComponent extends React.Component {
                     <a href={this.props.downloadLink}>Download</a>
                 </div>
             );    
-        }        
-        return (
-
-            <div className="payment">
+        } else {
+            downloadLink = (
                 <TwitterShareButton 
-                     url={tweetUrl} 
-                     title={tweetPlaceholder}
-                     onShareWindowClose={this.afterSharedTweet.bind(this)}
+                    url={tweetUrl} 
+                    title={tweetPlaceholder}
+                    onShareWindowClose={this.afterSharedTweet.bind(this)}
                 >
                     <span> Pay with tweet</span>
                 </TwitterShareButton>
-                <button>Download via email</button>
+            )
+        }     
+        return (
+
+            <div className="payment">
                 { downloadLink }
+                <div className="emailDownload"><span>Download via email</span></div>
             </div>
         )
     }

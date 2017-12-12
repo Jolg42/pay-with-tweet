@@ -24,10 +24,11 @@ export default class EbookPage extends React.Component {
           picture={currentEbook.ebookPicture}
         />
         <EbookContentsComponent 
+          summary={currentEbook.summary}
           content={currentEbook.description}
           id={currentEbook.id}
           title={currentEbook.name}
-          version={currentEbook.version}
+          instructions={currentEbook.instructions}
         />
         <AuthorComponent 
           about={currentEbook.aboutAuthor} 

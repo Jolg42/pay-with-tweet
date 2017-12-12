@@ -9,6 +9,7 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 import routes from './routes';
+import AppConfig from './data/config';
 import NotFoundPage from './components/NotFoundPage';
 import DownloadHandler from './file-downloads';
 // initialize the server and configure support for ejs templates
@@ -44,7 +45,7 @@ app.get('/download/:sid', (req, res) => {
 app.get('/generateDownload/:id', (req, res) => {
   DownloadHandler.createDownload(`${__dirname}/pdf/${req.params.id}.pdf`, (err, sid) => {
     res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify({ link: `http://localhost:3000/download/${sid}` }));  
+    res.send(JSON.stringify({ link: `${AppConfig.url}download/${sid}` }));  
   });
 });
 
