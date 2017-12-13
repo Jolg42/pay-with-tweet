@@ -1,9 +1,88 @@
-$desktop-breakpoint: 950px;
-$button-breakpoint: 480px;
 
 .ebook-page-main {
+
     width: 100%;
     display: block;
+   
+    .ebook-author-wrapper {
+        width: 100%;
+        background: #183082;
+        padding-bottom: 250px;
+        display: flex;
+    }
+
+    .footer-wrapper { 
+        width: 100%;
+        display: flex;
+     }
+ 
+    .ebook-info-wrapper, .footer-content, .author {
+        @include wrapper;
+    }
+
+    .footer-content {
+        margin-top: -200px;
+        margin-bottom: 15px;
+        background: #f8f8f8;
+        text-align: center;
+        padding-bottom: 40px;
+        box-shadow: 2px 10px 15px 0px rgba(168,168,168,1);
+
+        &-logo {
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+
+        &-title {
+            width: 100%;
+            font-size: 30px;
+            font-weight: normal;
+            line-height: 1.5;
+        }
+
+        &-text {
+            width: 60%;
+            margin: auto;
+            margin-top: 30px;            
+            font: {
+                size: 15px;
+                weight: normal;
+            }
+        }
+
+        &-features {
+            list-style: none;
+            margin-top: 30px;
+
+            li {
+                display: inline-flex;
+                background: url(/img/feature-icon.png) no-repeat;
+                padding-left: 40px;
+                font: {
+                    size: 15px;
+                    weight: normal;
+                }    
+                padding-top: 5px;
+                height: 35px;
+                margin-left: 30px;
+            }
+        }
+
+        &-buttons {
+            margin-top: 30px;
+            .regular-btn {
+                @include button;
+                border-color: #cccccc;
+            }
+
+            .orange-btn {
+                background: #eb5424;
+                border-color: #eb5424;
+                color :#FFFFFF;
+            }
+        }
+
+    }
 }
 
 .ebook-thumb-wrapper {
@@ -108,34 +187,9 @@ $button-breakpoint: 480px;
         }
 
         .emailDownload, .payment-download-wrapper {
-            color: #4a4a4a;
-            border: solid 1px #4a4a4a;
-            width: 240px;
-            height: 60px;
-            text-align: center;
-            text-transform: uppercase;
-            border-radius: 4px;
-            display: inline-flex;
-            margin-left: 10px;
-           
-            @media (max-width: $button-breakpoint) {
-                margin-top: 20px;
-                margin-left: 0px;        
-            }
-           
-            &:hover {
-                cursor: pointer;
-            }
-            span { 
-                margin: auto;
-             }
-
-             a { 
-                 margin: auto;
-                 text-decoration: none; 
-                 color: #4a4a4a;
-             }
-        }
+            
+            @include button;
+        }    
     }
 
     .content-separator {
@@ -155,13 +209,9 @@ $button-breakpoint: 480px;
 }
 
 .author {
-    width: 100%;
-    clear: both;
-    display: inline-block;
     padding-top: 60px;
     padding-bottom: 60px;
     color: #FFFFFF;
-    background: #183082;
     &-title {
         width: 100%;
         text-align: center;
@@ -192,7 +242,7 @@ $button-breakpoint: 480px;
 
     &-about {
         width: 100%;
-        padding: 10px;
+        padding: 20px;
         box-sizing: border-box;
         @media (min-width: $desktop-breakpoint) {
             width: calc( 100% - 430px);
@@ -210,7 +260,7 @@ $button-breakpoint: 480px;
         margin-top: 10px;
         font-size: 15px;    
         width: 100%;
-        padding: 10px;
+        padding: 10px 20px 10px 20px;
         box-sizing: border-box;
         img {
             vertical-align: middle;

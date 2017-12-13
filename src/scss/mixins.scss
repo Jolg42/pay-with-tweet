@@ -1,0 +1,32 @@
+@mixin wrapper {
+    max-width: $desktop-breakpoint;
+    margin: auto;
+}
+
+@mixin button {
+    color: #4a4a4a;
+    border: solid 1px #4a4a4a;
+    width: 240px;
+    height: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 4px;
+    display: inline-flex;
+    margin-left: 10px;
+    &:hover {
+        cursor: pointer;
+    }
+    span { 
+        margin: auto;
+     }
+
+     a { 
+         margin: auto;
+         text-decoration: none; 
+         color: #4a4a4a;
+     }
+     @media (max-width: $button-breakpoint) {
+        margin-top: 20px;
+        margin-left: 0px;        
+    }
+}
