@@ -269,7 +269,8 @@ body {
     box-sizing: border-box; }
     @media (min-width: 950px) {
       .ReactModal__Content .ebook-summary {
-        float: left; } }
+        float: left;
+        padding-left: 0px; } }
   .ReactModal__Content .toc-wrapper {
     width: 100%;
     display: inline-block;
