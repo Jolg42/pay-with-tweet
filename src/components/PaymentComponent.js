@@ -33,7 +33,7 @@ export default class EbookContentsComponent extends React.Component {
           });
     }
     render() {
-        const tweetPlaceholder = `I just downloaded ${this.props.title} 📖 by @auth0. ${this.props.version}. Check it out!`;
+        const tweetPlaceholder = `I just downloaded ${this.props.title} 📖 by @pay_with_tweet. ${this.props.version}. Check it out!`;
         const tweetUrl = `${AppConfig.url}ebook/${this.props.id}`;
         let downloadLink = '';
         if (this.state.shared) {
