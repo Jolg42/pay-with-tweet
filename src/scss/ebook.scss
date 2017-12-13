@@ -4,220 +4,222 @@ $button-breakpoint: 480px;
 .ebook-page-main {
     width: 100%;
     display: block;
+}
 
-    .ebook-thumb-wrapper {
+.ebook-thumb-wrapper {
+    width: 100%;
+    text-align: center;
+    @media (min-width: $desktop-breakpoint) {
+        float: left;
+        width: 360px;    
+    }
+    img {
+        box-shadow: 2px 10px 15px 0px rgba(168,168,168,1);
+    }
+}
+.right-container {
+    width: 100%;
+    text-align: center;
+    @media (min-width: $desktop-breakpoint) {
+        float: right;
+        margin-left: 40px;
+        width: calc( 100% - 400px);
+        text-align: left;
+    }
+}
+.ebook-summary {
+
+    margin-bottom: 30px;
+    color: #333333;
+
+    &-title {
         width: 100%;
-        text-align: center;
-        @media (min-width: $desktop-breakpoint) {
-            float: left;
-            width: 360px;    
-        }
+        font-size: 30px;
+        font-weight: normal;
+        line-height: 1.5;
+     }
+    &-author {
+        margin-top: 30px;
+        display: block;
+        font-size: 15px;
+    }
+    &-version {
+        display: block;
+        font-size: 13px;
+        margin-top: 10px;
+        text-transform: uppercase;
+        color: #9b9b9b;    
         img {
-            box-shadow: 2px 10px 15px 0px rgba(168,168,168,1);
+            vertical-align: middle;
         }
     }
-    .right-container {
+}
+
+.ebook-contents {
+    width: 100%;
+    @media (min-width: $desktop-breakpoint) {
+        float: right;
+        margin-left: 40px;
+        width: calc( 100% - 400px);
+    }
+    &-paragraph {
+        line-height: 2.5;
+        font-size: 13px;
+        font-weight: normal;            
+    }
+    &-summary {
+        margin-top: 50px;            
+        font-weight: bold;
+    }
+
+    &-description {
+        margin-top: 30px;
+        line-height: 2.5;            
+    } 
+
+    &-link-toc {
+        margin-top: 30px;
+        a {
+            color:#000000;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+    }
+
+    .payment { 
+        margin-top: 30px;
+
+        .SocialMediaShareButton--twitter {
+            color: #FFFFFF;
+            background: #1da1f2;
+            width: 240px;
+            height: 60px;
+            text-align: center;
+            text-transform: uppercase;
+            border-radius: 4px;
+            display: inline-flex;
+            &:hover {
+                cursor: pointer;
+            }
+            span { 
+                margin: auto;
+             }
+        }
+
+        .emailDownload, .payment-download-wrapper {
+            color: #4a4a4a;
+            border: solid 1px #4a4a4a;
+            width: 240px;
+            height: 60px;
+            text-align: center;
+            text-transform: uppercase;
+            border-radius: 4px;
+            display: inline-flex;
+            margin-left: 10px;
+           
+            @media (max-width: $button-breakpoint) {
+                margin-top: 20px;
+                margin-left: 0px;        
+            }
+           
+            &:hover {
+                cursor: pointer;
+            }
+            span { 
+                margin: auto;
+             }
+
+             a { 
+                 margin: auto;
+                 text-decoration: none; 
+                 color: #4a4a4a;
+             }
+        }
+    }
+
+    .content-separator {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 2px solid #f4f4f4;
+        margin-top: 60px;
+        padding: 0;
+
+    }
+
+    &-instructions {
+        margin-top: 30px;
+        margin-bottom: 60px;
+    }
+}
+
+.author {
+    width: 100%;
+    clear: both;
+    display: inline-block;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    color: #FFFFFF;
+    background: #183082;
+    &-title {
         width: 100%;
         text-align: center;
         @media (min-width: $desktop-breakpoint) {
             float: right;
-            margin-left: 40px;
             width: calc( 100% - 400px);
             text-align: left;
         }
-    }
-    .ebook-summary {
 
-        margin-bottom: 30px;
-        color: #333333;
-
-        &-title {
+        h2 {
             width: 100%;
             font-size: 30px;
             font-weight: normal;
             line-height: 1.5;
-         }
-        &-author {
-            margin-top: 30px;
-            display: block;
-            font-size: 15px;
-        }
-        &-version {
-            display: block;
-            font-size: 13px;
-            margin-top: 10px;
-            text-transform: uppercase;
-            color: #9b9b9b;    
-            img {
-                vertical-align: middle;
-            }
-        }
+        } 
     }
 
-    .ebook-contents {
+    &-picture {
+        text-align: center;
         width: 100%;
+        margin-top: 20px;
         @media (min-width: $desktop-breakpoint) {
-            float: right;
-            margin-left: 40px;
-            width: calc( 100% - 400px);
+            float: left;
+            width: 400px;
+            margin-top: 0px; 
         }
-        &-paragraph {
-            line-height: 2.5;
-            font-size: 13px;
-            font-weight: normal;            
-        }
-        &-summary {
-            margin-top: 50px;            
-            font-weight: bold;
-        }
+    } 
 
-        &-description {
-            margin-top: 30px;
-            line-height: 2.5;            
-        } 
+    &-about {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        @media (min-width: $desktop-breakpoint) {
+            width: calc( 100% - 430px);
+            float: left;  
+            padding: 0px;
+        }          
+        margin-top: 20px;
+        line-height: 2.5;
+        font-weight: normal;
+        font-size: 13px;
 
-        &-link-toc {
-            margin-top: 30px;
-            a {
-                color:#000000;
-                text-transform: uppercase;
-                text-decoration: none;
-            }
-
-        }
-
-        .payment { 
-            margin-top: 30px;
-
-            .SocialMediaShareButton--twitter {
-                color: #FFFFFF;
-                background: #1da1f2;
-                width: 240px;
-                height: 60px;
-                text-align: center;
-                text-transform: uppercase;
-                border-radius: 4px;
-                display: inline-flex;
-                &:hover {
-                    cursor: pointer;
-                }
-                span { 
-                    margin: auto;
-                 }
-            }
-
-            .emailDownload, .payment-download-wrapper {
-                color: #4a4a4a;
-                border: solid 1px #4a4a4a;
-                width: 240px;
-                height: 60px;
-                text-align: center;
-                text-transform: uppercase;
-                border-radius: 4px;
-                display: inline-flex;
-                margin-left: 10px;
-               
-                @media (max-width: $button-breakpoint) {
-                    margin-top: 20px;
-                    margin-left: 0px;        
-                }
-               
-                &:hover {
-                    cursor: pointer;
-                }
-                span { 
-                    margin: auto;
-                 }
-
-                 a { 
-                     margin: auto;
-                     text-decoration: none; 
-                     color: #4a4a4a;
-                 }
-            }
-        }
-
-        .content-separator {
-            display: block;
-            height: 1px;
-            border: 0;
-            border-top: 2px solid #f4f4f4;
-            margin-top: 60px;
-            padding: 0;
-
-        }
-
-        &-instructions {
-            margin-top: 30px;
-            margin-bottom: 60px;
-        }
     }
 
-    .author {
+    &-followtwitter {
+        margin-top: 10px;
+        font-size: 15px;    
         width: 100%;
-        clear: both;
-        display: inline-block;
-        padding-top: 60px;
-        padding-bottom: 60px;
-        color: #FFFFFF;
-        background: #183082;
-        &-title {
-            width: 100%;
-            text-align: center;
-            @media (min-width: $desktop-breakpoint) {
-                float: right;
-                width: calc( 100% - 400px);
-                text-align: left;
-            }
-
-            h2 {
-                width: 100%;
-                font-size: 30px;
-                font-weight: normal;
-                line-height: 1.5;
-            } 
+        padding: 10px;
+        box-sizing: border-box;
+        img {
+            vertical-align: middle;
         }
-
-        &-picture {
-            text-align: center;
-            width: 100%;
-            margin-top: 20px;
-            @media (min-width: $desktop-breakpoint) {
-                float: left;
-                width: 400px;
-                margin-top: 0px; 
-            }
-        } 
-
-        &-about {
-            width: 96%;
-            padding: 4px;    
-            @media (min-width: $desktop-breakpoint) {
-                width: calc( 100% - 430px);
-                float: left;  
-                padding: 0px;
-            }          
-            margin-top: 20px;
-            line-height: 2.5;
-            font-weight: normal;
-            font-size: 13px;
-
-        }
-
-        &-followtwitter {
-            margin-top: 10px;
-            font-size: 15px;    
-            width: 96%;
-            padding: 4px;
-            img {
-                vertical-align: middle;
-            }
-            @media (min-width: $desktop-breakpoint) {
-                width: calc( 100% - 400px);
-                float:right;
-                padding: 0px
-            }    
-            
-        }
+        @media (min-width: $desktop-breakpoint) {
+            width: calc( 100% - 400px);
+            float:right;
+            padding: 0px
+        }    
+        
     }
 }

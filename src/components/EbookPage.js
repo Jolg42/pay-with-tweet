@@ -1,5 +1,3 @@
-'use strict';
-
 import React from 'react';
 import { Link } from 'react-router';
 import Ebooks from '../data/Ebooks';
@@ -28,6 +26,9 @@ export default class EbookPage extends React.Component {
           content={currentEbook.description}
           id={currentEbook.id}
           title={currentEbook.name}
+          version={currentEbook.version}
+          author={currentEbook.author}
+          toc={currentEbook.toc}
           instructions={currentEbook.instructions}
         />
         <AuthorComponent 

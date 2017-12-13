@@ -1,0 +1,53 @@
+.ReactModal__Content {
+   width: 100%;
+   max-width: 960px;
+   top: 50%;
+   left: 50%;
+   right: auto;
+   bottom: auto;
+   margin-right: -50%;
+   transform: translate(-50%, -50%);
+   box-sizing: border-box;
+   
+   .ebook-summary {
+       text-align: left;
+       padding-left: 30px;
+       box-sizing: border-box;
+        @media (min-width: $desktop-breakpoint) {
+            float: left;
+            padding-left: 0px;
+        }
+    }
+
+    .toc-wrapper {
+        width: 100%;
+        display: inline-block;
+        padding-left: 40px;
+        box-sizing: border-box;
+        color: #333333;
+        .toc-chapter-name {
+            margin-top: 30px;
+            width: 100%;
+            box-sizing: border-box;
+            
+            font: {
+                weight: bold;
+                size: 15px;
+            }
+        }
+        .toc-content {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 30px 20px 20px 20px;
+            &-name{
+                float: left;
+            }
+
+            &-page {
+                float: right;
+            }
+        }
+    }
+
+
+}

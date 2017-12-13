@@ -1,7 +1,6 @@
-'use strict';
 import React from 'react';
 import AppConfig from '../data/config';
-import {ShareButtons} from 'react-share';
+import {ShareButtons, ShareCounts} from 'react-share';
 import axios from 'axios';
 const { TwitterShareButton } = ShareButtons;
 export default class EbookContentsComponent extends React.Component {
@@ -9,9 +8,20 @@ export default class EbookContentsComponent extends React.Component {
     constructor(props){
         super(props);
         this.state = {shared: false, downloaded: false };
+        
     }
-
-    afterSharedTweet () {
+    componentDidMount() { 
+        console.log(window);
+        window.twttr.events.bind(
+            'tweet',
+            function (event) {
+                console.log('tweeted');
+            }
+        );
+    }
+    afterSharedTweet (params) {
+        console.log(params);
+        debugger;
         axios({
             method:'get',
             url:`${AppConfig.url}generateDownload/${this.props.id}`,
@@ -22,7 +32,6 @@ export default class EbookContentsComponent extends React.Component {
               this.setState({shared: true});
           });
     }
-
     render() {
         const tweetPlaceholder = `I just downloaded ${this.props.title} 📖 by @auth0. ${this.props.version}. Check it out!`;
         const tweetUrl = `${AppConfig.url}ebook/${this.props.id}`;
@@ -48,7 +57,7 @@ export default class EbookContentsComponent extends React.Component {
 
             <div className="payment">
                 { downloadLink }
-                <div className="emailDownload"><span>Download via email</span></div>
+              <div className="emailDownload"><span>Download via email</span></div>
             </div>
         )
     }

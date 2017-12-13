@@ -1,7 +1,6 @@
-'use strict';
 import React from 'react';
 
-export default class EbookPreviewComponent extends React.Component {
+export default class EbookSummaryComponent extends React.Component {
     render() {
         return (
             <div className="ebook-summary right-container">
