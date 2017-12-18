@@ -223,7 +223,7 @@ body {
       text-decoration: none; }
   .ebook-contents .payment {
     margin-top: 30px; }
-    .ebook-contents .payment .SocialMediaShareButton--twitter {
+    .ebook-contents .payment .twitter-btn {
       color: #FFFFFF;
       background: #1da1f2;
       width: 240px;
@@ -232,9 +232,9 @@ body {
       text-transform: uppercase;
       border-radius: 4px;
       display: inline-flex; }
-      .ebook-contents .payment .SocialMediaShareButton--twitter:hover {
+      .ebook-contents .payment .twitter-btn:hover {
         cursor: pointer; }
-      .ebook-contents .payment .SocialMediaShareButton--twitter span {
+      .ebook-contents .payment .twitter-btn span {
         margin: auto; }
     .ebook-contents .payment .emailDownload, .ebook-contents .payment .payment-download-wrapper {
       color: #4a4a4a;

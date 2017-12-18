@@ -1,40 +1,41 @@
 import React from 'react';
 import AppConfig from '../data/config';
-import {ShareButtons, ShareCounts} from 'react-share';
 import axios from 'axios';
-const { TwitterShareButton } = ShareButtons;
+import TwitterLogin from 'react-twitter-auth';
+
 export default class EbookContentsComponent extends React.Component {
 
     constructor(props){
         super(props);
-        this.state = {shared: false, downloaded: false };
-        
+        this.state = {shared: false, downloaded: false };  
     }
-    componentDidMount() { 
-        console.log(window);
-        window.twttr.events.bind(
-            'tweet',
-            function (event) {
-                console.log('tweeted');
-            }
-        );
-    }
-    afterSharedTweet (params) {
-        console.log(params);
-        debugger;
+
+    payTweet () {
         axios({
             method:'get',
-            url:`${AppConfig.url}generateDownload/${this.props.id}`,
-            responseType:'stream'
+            url:`${AppConfig.url}generateDownload`,
+            responseType:'stream',
           }).then( (response) => {
               console.log(this.props);
               this.props.downloadLink = response.data.link;
               this.setState({shared: true});
           });
     }
+
+    onSuccess(response) {
+        const token = response.headers.get('x-auth-token');
+        response.json().then(user => {
+          if (token) {
+            this.payTweet();  
+          }
+        });
+      };
+    
+    onFailed (error) {
+        alert(error);
+     };
+
     render() {
-        const tweetPlaceholder = `I just downloaded ${this.props.title} 📖 by @pay_with_tweet. ${this.props.version}. Check it out!`;
-        const tweetUrl = `${AppConfig.url}ebook/${this.props.id}`;
         let downloadLink = '';
         if (this.state.shared) {
             downloadLink = ( 
@@ -44,13 +45,9 @@ export default class EbookContentsComponent extends React.Component {
             );    
         } else {
             downloadLink = (
-                <TwitterShareButton 
-                    url={tweetUrl} 
-                    title={tweetPlaceholder}
-                    onShareWindowClose={this.afterSharedTweet.bind(this)}
-                >
-                    <span> Pay with tweet</span>
-                </TwitterShareButton>
+                <TwitterLogin className="twitter-btn" loginUrl={`http://local.pay-with-tweet.com:3000/auth/twitter/${this.props.id}/`}
+                      onFailure={this.onFailed} onSuccess={this.onSuccess.bind(this)}
+                      requestTokenUrl="http://local.pay-with-tweet.com:3000/auth/twitter/reverse"/>
             )
         }     
         return (
