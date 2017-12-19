@@ -54,7 +54,7 @@ app.get('/twitterResponse', (req, res) => {
 
 app.post('/auth/twitter/reverse', function(req, res) {
   let oauth = {
-    oauth_callback: "http%3A%2F%2Flocalhost%3A3000%2FtwitterResponse",
+    oauth_callback: encodeURI(`${AppConfig.url}twitterResponse`),
     consumer_key: AppConfig.consumer_key,
     consumer_secret: AppConfig.consumer_secret
   };
