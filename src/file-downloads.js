@@ -39,7 +39,6 @@ static createDownload(filePath, callback) {
   
     // Generate the download session filename
     let dlSessionFileName = path.join(DL_SESSION_FOLDER, downloadSid + '.pdf');
-  
     // Write the link of the file to the download session file
     copyFile(filePath, dlSessionFileName);
     // If succeeded, return the new download sid
@@ -50,7 +49,7 @@ static createDownload(filePath, callback) {
   static  getDownloadFilePath(downloadSid, callback) {
     // Get the download session file name
     let dlSessionFileName = path.join(DL_SESSION_FOLDER, downloadSid + '.pdf');
-  
+    console.log(dlSessionFileName);
     // Check if the download session exists
     if (!fs.existsSync(dlSessionFileName)) {
       return callback(new Error('Download does not exist'));

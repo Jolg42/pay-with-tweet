@@ -152,12 +152,11 @@ getToken: function(req) {
 }
 });
 
-app.get('/download/', (req, res) => {
-  let downloadSid = req.body.id;
-  let token = req.body.token;
+app.get('/download/:id', (req, res) => {
+  let downloadSid = req.params.id;
   DownloadHandler.getDownloadFilePath(downloadSid, (err, path) => {
     if (err) {
-      return res.end('Error');
+      return res.render('index', { markup: "This download link is not valid anymore" })
     } 
     console.log(path);
     let file = fs.createReadStream(path);
@@ -172,12 +171,13 @@ app.get('/download/', (req, res) => {
   });
 });
 
-app.post('/generateDownload/', (req, res) => {
+app.get('/generateDownload', (req, res) => {
   let sess = req.session;
   if( sess.currentBookId ){
     DownloadHandler.createDownload(`${__dirname}/pdf/${sess.currentBookId}.pdf`, (err, sid) => {
       console.log(err);
       res.setHeader('Content-Type', 'application/json');
+      console.log(JSON.stringify({ link: `${AppConfig.url}download/${sid}` }));
       res.send(JSON.stringify({ link: `${AppConfig.url}download/${sid}` }));  
     });
   } else {

@@ -7,9 +7,10 @@ export default class EbookContentsComponent extends React.Component {
 
     constructor(props){
         super(props);
-        this.state = {shared: false, downloaded: false };  
+        this.state = {
+            shared: false
+        };  
     }
-
     payTweet () {
         axios({
             method:'get',
@@ -17,8 +18,10 @@ export default class EbookContentsComponent extends React.Component {
             responseType:'stream',
           }).then( (response) => {
               console.log(this.props);
+              console.log(response.data);
               this.props.downloadLink = response.data.link;
               this.setState({shared: true});
+              console.log(this.state.shared);
           });
     }
 
@@ -37,24 +40,26 @@ export default class EbookContentsComponent extends React.Component {
 
     render() {
         let downloadLink = '';
+        console.log('Should render');
         if (this.state.shared) {
             downloadLink = ( 
                 <div className="payment-download-wrapper">
-                    <a href={this.props.downloadLink}>Download</a>
+                    <a  href={this.props.downloadLink}  target="_blank" >Download</a>
                 </div>
             );    
         } else {
             downloadLink = (
-                <TwitterLogin className="twitter-btn" loginUrl={`http://local.pay-with-tweet.com:3000/auth/twitter/${this.props.id}/`}
+                <TwitterLogin className="twitter-btn" loginUrl={`${AppConfig.url}auth/twitter/${this.props.id}/`}
                       onFailure={this.onFailed} onSuccess={this.onSuccess.bind(this)}
-                      requestTokenUrl="http://local.pay-with-tweet.com:3000/auth/twitter/reverse"/>
+                      requestTokenUrl={`${AppConfig.url}auth/twitter/reverse/`} 
+                      text="Pay with tweet"/>
             )
         }     
         return (
 
             <div className="payment">
                 { downloadLink }
-              <div className="emailDownload"><span>Download via email</span></div>
+              <div className="emailDownload" ><span>Download via email</span></div>
             </div>
         )
     }

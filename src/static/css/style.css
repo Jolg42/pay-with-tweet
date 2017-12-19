@@ -235,7 +235,10 @@ body {
       .ebook-contents .payment .twitter-btn:hover {
         cursor: pointer; }
       .ebook-contents .payment .twitter-btn span {
-        margin: auto; }
+        margin: auto;
+        font-size: 15px; }
+        .ebook-contents .payment .twitter-btn span svg {
+          display: none; }
     .ebook-contents .payment .emailDownload, .ebook-contents .payment .payment-download-wrapper {
       color: #4a4a4a;
       border: solid 1px #4a4a4a;
